@@ -1,0 +1,660 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5D33B3CB227B4E6100B94A81 /* MapOverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D33B3CA227B4E6100B94A81 /* MapOverviewViewController.swift */; };
+		5D33B3CE227B4FB000B94A81 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DE9F3EB227B4CB5004E9196 /* LaunchScreen.storyboard */; };
+		5D33B3D2227B500C00B94A81 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D33B3D1227B500C00B94A81 /* LocationManager.swift */; };
+		5D33B3D6227B633400B94A81 /* FenceEventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D33B3D5227B633400B94A81 /* FenceEventsTableViewController.swift */; };
+		5D33B3D8227B63F700B94A81 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D33B3D7227B63F700B94A81 /* MainViewController.swift */; };
+		5D33B3DA227B692000B94A81 /* NoteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D33B3D9227B692000B94A81 /* NoteManager.swift */; };
+		5D33B3DD227B6B3E00B94A81 /* FenceEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D33B3DC227B6B3E00B94A81 /* FenceEvent.swift */; };
+		5DE9F3E3227B4CB4004E9196 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE9F3E2227B4CB4004E9196 /* AppDelegate.swift */; };
+		5DE9F3EA227B4CB5004E9196 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DE9F3E9227B4CB5004E9196 /* Assets.xcassets */; };
+		5DF0E2E1227C915D005DC532 /* FenceEventManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF0E2E0227C915D005DC532 /* FenceEventManagerTests.swift */; };
+		5DF0E2E3227DC674005DC532 /* LoitrSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF0E2E2227DC674005DC532 /* LoitrSummaryViewController.swift */; };
+		5DF0E2E5227DC775005DC532 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF0E2E4227DC775005DC532 /* Extensions.swift */; };
+		5DF0E2E7227DC79E005DC532 /* ExtensionsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF0E2E6227DC79E005DC532 /* ExtensionsTest.swift */; };
+		5DF0E2E9227E0E90005DC532 /* Debouncer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF0E2E8227E0E90005DC532 /* Debouncer.swift */; };
+		5DF0E2EC227E0EED005DC532 /* BouncyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF0E2EB227E0EED005DC532 /* BouncyView.swift */; };
+		925ABA1399E1E66B7498D046 /* Pods_Loitr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6918CCB5A98F99C213A3FF82 /* Pods_Loitr.framework */; };
+		9F28C50900FC0010D06DE1C0 /* Pods_LoitrTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 185B865C1A8FCB5304BB3D40 /* Pods_LoitrTests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5DF0E2DB227C9115005DC532 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5DE9F3D7227B4CB4004E9196 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5DE9F3DE227B4CB4004E9196;
+			remoteInfo = Loitr;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		16AC35A0DC202ECDAB9E375E /* Pods-LoitrTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoitrTests.debug.xcconfig"; path = "Target Support Files/Pods-LoitrTests/Pods-LoitrTests.debug.xcconfig"; sourceTree = "<group>"; };
+		185B865C1A8FCB5304BB3D40 /* Pods_LoitrTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LoitrTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		308FFA67D436C0A92376A3B4 /* Pods-LoitrTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoitrTests.release.xcconfig"; path = "Target Support Files/Pods-LoitrTests/Pods-LoitrTests.release.xcconfig"; sourceTree = "<group>"; };
+		5D33B3CA227B4E6100B94A81 /* MapOverviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapOverviewViewController.swift; sourceTree = "<group>"; };
+		5D33B3D1227B500C00B94A81 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		5D33B3D5227B633400B94A81 /* FenceEventsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FenceEventsTableViewController.swift; sourceTree = "<group>"; };
+		5D33B3D7227B63F700B94A81 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		5D33B3D9227B692000B94A81 /* NoteManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteManager.swift; sourceTree = "<group>"; };
+		5D33B3DB227B695A00B94A81 /* Loitr.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Loitr.entitlements; sourceTree = "<group>"; };
+		5D33B3DC227B6B3E00B94A81 /* FenceEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FenceEvent.swift; sourceTree = "<group>"; };
+		5DE9F3DF227B4CB4004E9196 /* Loitr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Loitr.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5DE9F3E2227B4CB4004E9196 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5DE9F3E9227B4CB5004E9196 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5DE9F3EC227B4CB5004E9196 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5DE9F3EE227B4CB5004E9196 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5DF0E2D6227C9115005DC532 /* LoitrTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LoitrTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5DF0E2DA227C9115005DC532 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5DF0E2E0227C915D005DC532 /* FenceEventManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FenceEventManagerTests.swift; sourceTree = "<group>"; };
+		5DF0E2E2227DC674005DC532 /* LoitrSummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoitrSummaryViewController.swift; sourceTree = "<group>"; };
+		5DF0E2E4227DC775005DC532 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		5DF0E2E6227DC79E005DC532 /* ExtensionsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionsTest.swift; sourceTree = "<group>"; };
+		5DF0E2E8227E0E90005DC532 /* Debouncer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debouncer.swift; sourceTree = "<group>"; };
+		5DF0E2EB227E0EED005DC532 /* BouncyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BouncyView.swift; sourceTree = "<group>"; };
+		6918CCB5A98F99C213A3FF82 /* Pods_Loitr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Loitr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		943441C2387F5E043C777F82 /* Pods-Loitr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Loitr.debug.xcconfig"; path = "Target Support Files/Pods-Loitr/Pods-Loitr.debug.xcconfig"; sourceTree = "<group>"; };
+		E1EE5D932AAAFEFE12178768 /* Pods-Loitr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Loitr.release.xcconfig"; path = "Target Support Files/Pods-Loitr/Pods-Loitr.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5DE9F3DC227B4CB4004E9196 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				925ABA1399E1E66B7498D046 /* Pods_Loitr.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5DF0E2D3227C9115005DC532 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F28C50900FC0010D06DE1C0 /* Pods_LoitrTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		36FA5749F956B72CEAC68B2C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6918CCB5A98F99C213A3FF82 /* Pods_Loitr.framework */,
+				185B865C1A8FCB5304BB3D40 /* Pods_LoitrTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5D33B3CC227B4F6E00B94A81 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				5DF0E2EA227E0ED9005DC532 /* Component */,
+				5D33B3CA227B4E6100B94A81 /* MapOverviewViewController.swift */,
+				5D33B3D5227B633400B94A81 /* FenceEventsTableViewController.swift */,
+				5D33B3D7227B63F700B94A81 /* MainViewController.swift */,
+				5DF0E2E2227DC674005DC532 /* LoitrSummaryViewController.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		5D33B3CD227B4F7B00B94A81 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				5DE9F3E9227B4CB5004E9196 /* Assets.xcassets */,
+				5DE9F3EB227B4CB5004E9196 /* LaunchScreen.storyboard */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		5D33B3CF227B4FF700B94A81 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				5D33B3DC227B6B3E00B94A81 /* FenceEvent.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		5D33B3D0227B4FFC00B94A81 /* interfaces */ = {
+			isa = PBXGroup;
+			children = (
+				5D33B3D1227B500C00B94A81 /* LocationManager.swift */,
+				5D33B3D9227B692000B94A81 /* NoteManager.swift */,
+				5DF0E2E4227DC775005DC532 /* Extensions.swift */,
+				5DF0E2E8227E0E90005DC532 /* Debouncer.swift */,
+			);
+			path = interfaces;
+			sourceTree = "<group>";
+		};
+		5DE9F3D6227B4CB3004E9196 = {
+			isa = PBXGroup;
+			children = (
+				5DE9F3E1227B4CB4004E9196 /* Loitr */,
+				5DF0E2D7227C9115005DC532 /* LoitrTests */,
+				5DE9F3E0227B4CB4004E9196 /* Products */,
+				DC7D4DEB5733FB8B587C829B /* Pods */,
+				36FA5749F956B72CEAC68B2C /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		5DE9F3E0227B4CB4004E9196 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5DE9F3DF227B4CB4004E9196 /* Loitr.app */,
+				5DF0E2D6227C9115005DC532 /* LoitrTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5DE9F3E1227B4CB4004E9196 /* Loitr */ = {
+			isa = PBXGroup;
+			children = (
+				5D33B3DB227B695A00B94A81 /* Loitr.entitlements */,
+				5D33B3D0227B4FFC00B94A81 /* interfaces */,
+				5D33B3CF227B4FF700B94A81 /* models */,
+				5DE9F3E2227B4CB4004E9196 /* AppDelegate.swift */,
+				5DE9F3EE227B4CB5004E9196 /* Info.plist */,
+				5D33B3CD227B4F7B00B94A81 /* Assets */,
+				5D33B3CC227B4F6E00B94A81 /* UI */,
+			);
+			path = Loitr;
+			sourceTree = "<group>";
+		};
+		5DF0E2D7227C9115005DC532 /* LoitrTests */ = {
+			isa = PBXGroup;
+			children = (
+				5DF0E2E6227DC79E005DC532 /* ExtensionsTest.swift */,
+				5DF0E2DA227C9115005DC532 /* Info.plist */,
+				5DF0E2E0227C915D005DC532 /* FenceEventManagerTests.swift */,
+			);
+			path = LoitrTests;
+			sourceTree = "<group>";
+		};
+		5DF0E2EA227E0ED9005DC532 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				5DF0E2EB227E0EED005DC532 /* BouncyView.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		DC7D4DEB5733FB8B587C829B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				943441C2387F5E043C777F82 /* Pods-Loitr.debug.xcconfig */,
+				E1EE5D932AAAFEFE12178768 /* Pods-Loitr.release.xcconfig */,
+				16AC35A0DC202ECDAB9E375E /* Pods-LoitrTests.debug.xcconfig */,
+				308FFA67D436C0A92376A3B4 /* Pods-LoitrTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5DE9F3DE227B4CB4004E9196 /* Loitr */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5DE9F3F1227B4CB5004E9196 /* Build configuration list for PBXNativeTarget "Loitr" */;
+			buildPhases = (
+				BB44AC2A58E37365DF3417EA /* [CP] Check Pods Manifest.lock */,
+				5DE9F3DB227B4CB4004E9196 /* Sources */,
+				5DE9F3DC227B4CB4004E9196 /* Frameworks */,
+				5DE9F3DD227B4CB4004E9196 /* Resources */,
+				16C2B5B0ECDF642D5B0E3E58 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Loitr;
+			productName = Loitr;
+			productReference = 5DE9F3DF227B4CB4004E9196 /* Loitr.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5DF0E2D5227C9115005DC532 /* LoitrTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5DF0E2DF227C9115005DC532 /* Build configuration list for PBXNativeTarget "LoitrTests" */;
+			buildPhases = (
+				AC6519ED16362027D5B9842C /* [CP] Check Pods Manifest.lock */,
+				5DF0E2D2227C9115005DC532 /* Sources */,
+				5DF0E2D3227C9115005DC532 /* Frameworks */,
+				5DF0E2D4227C9115005DC532 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5DF0E2DC227C9115005DC532 /* PBXTargetDependency */,
+			);
+			name = LoitrTests;
+			productName = LoitrTests;
+			productReference = 5DF0E2D6227C9115005DC532 /* LoitrTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5DE9F3D7227B4CB4004E9196 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = "Timothy Dillman";
+				TargetAttributes = {
+					5DE9F3DE227B4CB4004E9196 = {
+						CreatedOnToolsVersion = 10.2.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
+					};
+					5DF0E2D5227C9115005DC532 = {
+						CreatedOnToolsVersion = 10.2.1;
+						LastSwiftMigration = 1020;
+						TestTargetID = 5DE9F3DE227B4CB4004E9196;
+					};
+				};
+			};
+			buildConfigurationList = 5DE9F3DA227B4CB4004E9196 /* Build configuration list for PBXProject "Loitr" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5DE9F3D6227B4CB3004E9196;
+			productRefGroup = 5DE9F3E0227B4CB4004E9196 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5DE9F3DE227B4CB4004E9196 /* Loitr */,
+				5DF0E2D5227C9115005DC532 /* LoitrTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5DE9F3DD227B4CB4004E9196 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D33B3CE227B4FB000B94A81 /* LaunchScreen.storyboard in Resources */,
+				5DE9F3EA227B4CB5004E9196 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5DF0E2D4227C9115005DC532 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		16C2B5B0ECDF642D5B0E3E58 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Loitr/Pods-Loitr-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SwiftDate/SwiftDate.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftDate.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Loitr/Pods-Loitr-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AC6519ED16362027D5B9842C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LoitrTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BB44AC2A58E37365DF3417EA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Loitr-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5DE9F3DB227B4CB4004E9196 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D33B3D6227B633400B94A81 /* FenceEventsTableViewController.swift in Sources */,
+				5DF0E2E5227DC775005DC532 /* Extensions.swift in Sources */,
+				5D33B3CB227B4E6100B94A81 /* MapOverviewViewController.swift in Sources */,
+				5DF0E2E9227E0E90005DC532 /* Debouncer.swift in Sources */,
+				5D33B3DD227B6B3E00B94A81 /* FenceEvent.swift in Sources */,
+				5DE9F3E3227B4CB4004E9196 /* AppDelegate.swift in Sources */,
+				5DF0E2E3227DC674005DC532 /* LoitrSummaryViewController.swift in Sources */,
+				5D33B3DA227B692000B94A81 /* NoteManager.swift in Sources */,
+				5D33B3D2227B500C00B94A81 /* LocationManager.swift in Sources */,
+				5DF0E2EC227E0EED005DC532 /* BouncyView.swift in Sources */,
+				5D33B3D8227B63F700B94A81 /* MainViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5DF0E2D2227C9115005DC532 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5DF0E2E1227C915D005DC532 /* FenceEventManagerTests.swift in Sources */,
+				5DF0E2E7227DC79E005DC532 /* ExtensionsTest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5DF0E2DC227C9115005DC532 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5DE9F3DE227B4CB4004E9196 /* Loitr */;
+			targetProxy = 5DF0E2DB227C9115005DC532 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5DE9F3EB227B4CB5004E9196 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5DE9F3EC227B4CB5004E9196 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5DE9F3EF227B4CB5004E9196 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		5DE9F3F0227B4CB5004E9196 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5DE9F3F2227B4CB5004E9196 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 943441C2387F5E043C777F82 /* Pods-Loitr.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Loitr/Loitr.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2U5VW4S83Y;
+				INFOPLIST_FILE = Loitr/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mobilefirst.Loitr;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		5DE9F3F3227B4CB5004E9196 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E1EE5D932AAAFEFE12178768 /* Pods-Loitr.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Loitr/Loitr.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2U5VW4S83Y;
+				INFOPLIST_FILE = Loitr/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mobilefirst.Loitr;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		5DF0E2DD227C9115005DC532 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 16AC35A0DC202ECDAB9E375E /* Pods-LoitrTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2U5VW4S83Y;
+				INFOPLIST_FILE = LoitrTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mobilefirst.LoitrTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Loitr.app/Loitr";
+			};
+			name = Debug;
+		};
+		5DF0E2DE227C9115005DC532 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 308FFA67D436C0A92376A3B4 /* Pods-LoitrTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2U5VW4S83Y;
+				INFOPLIST_FILE = LoitrTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mobilefirst.LoitrTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Loitr.app/Loitr";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5DE9F3DA227B4CB4004E9196 /* Build configuration list for PBXProject "Loitr" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5DE9F3EF227B4CB5004E9196 /* Debug */,
+				5DE9F3F0227B4CB5004E9196 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5DE9F3F1227B4CB5004E9196 /* Build configuration list for PBXNativeTarget "Loitr" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5DE9F3F2227B4CB5004E9196 /* Debug */,
+				5DE9F3F3227B4CB5004E9196 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5DF0E2DF227C9115005DC532 /* Build configuration list for PBXNativeTarget "LoitrTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5DF0E2DD227C9115005DC532 /* Debug */,
+				5DF0E2DE227C9115005DC532 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5DE9F3D7227B4CB4004E9196 /* Project object */;
+}
