@@ -12,6 +12,7 @@ import CoreLocation
 protocol LocationManagerDelegate: class {
     func locationPermissionDenied()
     func didAddGeofenceLocation()
+    func locationPermissionAllowed()
 }
 
 protocol LocationManagerInterface: CLLocationManagerDelegate {
@@ -46,6 +47,7 @@ extension LocationProvider: LocationManagerInterface {
         let authStatus = CLLocationManager.authorizationStatus()
         switch (authStatus) {
         case .authorizedAlways:
+            delegate?.locationPermissionAllowed()
             startGeofencing(for: CLCircularRegion(center: CLLocationCoordinate2D(latitude: 33.4768, longitude: -81.9686), radius: 40.0, identifier: "Work"))
         case .notDetermined:
             clManager.requestAlwaysAuthorization()

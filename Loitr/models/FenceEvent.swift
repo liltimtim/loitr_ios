@@ -145,8 +145,13 @@ final class FenceEventManager {
         return allEvents().filter({ $0.date >= date.dateBySet(hour: 0, min: 0, secs: 0)! && $0.date <= date.dateBySet(hour: 23, min: 59, secs: 59)! }).sorted(by: { $0.date > $1.date }).first(where: { $0.type == FenceEvent.EventType.exit.rawValue })?.date
     }
     
-    func summary(for start:Date, end: Date) -> (hours: Int, minutes: Int, seconds: Int)? {
-        let diff = end - start
+    func summary(for start:Date, end: Date?) -> (hours: Int, minutes: Int, seconds: Int)? {
+        var diff: DateComponents
+        if end == nil {
+            diff = Date() - start
+        } else {
+            diff = end! - start
+        }
         guard let hour = diff.hour, let minute = diff.minute, let second = diff.second else { return nil }
         if (hour == 0 && minute == 0 && second == 0) { return nil }
         return (hour, minute, second)

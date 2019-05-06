@@ -18,31 +18,48 @@ final class LoitrSummaryViewController : UIViewController {
     
     private var bouncyView: BouncyView!
     
+    private var locationProvider: LocationManagerInterface!
+    
+    private var timer: Timer?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
         registerAppChanges()
         FenceEventManager.instance.onSaveEvent = saveEvent
+        locationProvider = LocationProvider.instance
+        locationProvider.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         updateUI()
-        
+        locationProvider.requestPermission()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         LocationProvider.instance.requestPermission()
+        timer?.invalidate()
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateUI), userInfo: nil, repeats: true)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        timer?.invalidate()
+        timer = nil
     }
     
     private func saveEvent() {
         updateUI()
     }
     
-    private func updateUI() {
-        let verbiage = generateVerbiage(for: FenceEventManager.instance.arrival(for: Date()), departure: FenceEventManager.instance.departure(for: Date()))
-        todaySummaryLabel.attributedText = NSAttributedString(string: verbiage, attributes: [.foregroundColor: UIColor.white, .font: UIFont.systemFont(ofSize: 30, weight: .semibold)])
+    @objc private func updateUI() {
+        DispatchQueue.main.async {
+            let verbiage = self.generateVerbiage(for: FenceEventManager.instance.arrival(for: Date()), departure: FenceEventManager.instance.departure(for: Date()))
+            self.todaySummaryLabel.attributedText = NSAttributedString(string: verbiage, attributes: [.foregroundColor: UIColor.white, .font: UIFont.systemFont(ofSize: 30, weight: .semibold)])
+        }
+        
     }
     
     private func registerAppChanges() {
@@ -55,7 +72,7 @@ final class LoitrSummaryViewController : UIViewController {
         let arrivalVerbiage = arrival == nil ? "You have not arrived yet":"You arrived at \(arrival!.convertTo(region: region).toFormat(Date.hourFormat))"
         let departureVerbiage = departure == nil ? "you have not departed yet.":"you departed at \(departure!.convertTo(region: region).toFormat(Date.hourFormat))."
         let summary = FenceEventManager.instance.summary(for: arrival ?? Date(), end: departure ?? Date())
-        let totalTimeVerbiage = summary == nil ? "I don't think you have loitered enough today.":"So far, you have spent \(summary?.hours.pluralize(with: "hour") ?? 0.pluralize(with: "hour")) and \(summary?.minutes.pluralize(with: "minute") ?? 0.pluralize(with: "minute")) loitering!"
+        let totalTimeVerbiage = summary == nil ? "I don't think you have loitered enough today.":"So far, you have spent \(summary?.hours.pluralize(with: "hour") ?? 0.pluralize(with: "hour")) \(summary?.minutes.pluralize(with: "minute") ?? 0.pluralize(with: "minute")) and \(summary?.seconds.pluralize(with: "second") ?? 0.pluralize(with: "second")) loitering!"
         return "\(arrivalVerbiage) and \(departureVerbiage)  \(totalTimeVerbiage)"
     }
     
@@ -87,5 +104,19 @@ final class LoitrSummaryViewController : UIViewController {
         bouncyView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -28).isActive = true
         bouncyView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 28).isActive = true
         bouncyView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -28).isActive = true
+    }
+}
+
+extension LoitrSummaryViewController : LocationManagerDelegate {
+    func locationPermissionDenied() {
+        
+    }
+    
+    func didAddGeofenceLocation() {
+        updateUI()
+    }
+    
+    func locationPermissionAllowed() {
+        updateUI()
     }
 }

@@ -68,4 +68,8 @@ extension MapOverviewViewController: LocationManagerDelegate {
     func didAddGeofenceLocation() {
         setupFenceOverlays()
     }
+    
+    func locationPermissionAllowed() {
+        print("pmerission allowed")
+    }
 }
