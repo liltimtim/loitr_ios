@@ -22,6 +22,6 @@ platform :ios do
     increment_build_number(build_number: latest_testflight_build_number(app_identifier: "com.mobilefirst.Loitr", platform: "ios") + 1, xcodeproj: "Loitr.xcodeproj")
     changelog_from_git_commits(merge_commit_filtering: "exclude_merges")
     build_app(workspace: "Loitr.xcworkspace", scheme: "Loitr")
-    upload_to_testflight(skip_waiting_For_build_processing: true)
+    upload_to_testflight(skip_waiting_for_build_processing: true)
   end
 end
