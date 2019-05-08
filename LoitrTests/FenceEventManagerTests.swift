@@ -16,7 +16,6 @@ class FenceEventManagerTests : XCTestCase {
         var endDate = compsStartDate
         endDate.hour = 16
         let veryFarPastDate = DateComponents(calendar: Calendar.current, timeZone: TimeZone.current, year: 1999, month: 1, day: 1, hour: 13, minute: 0, second: 0).date!
-        
         let event1 = FenceEvent(type: .entered, date: startDate!)
         let event2 = FenceEvent(type: .exit, date: endDate.date!)
         let event3 = FenceEvent(type: .entered, date: veryFarPastDate)
@@ -64,6 +63,41 @@ class FenceEventManagerTests : XCTestCase {
         let summaries = FenceEventManager.instance.dates(for: startOfWeek, end: endOfWeek)
         XCTAssertEqual(summaries.count, 14)
         XCTAssertEqual(FenceEventManager.instance.hourSummary(for: startOfWeek, end: endOfWeek), 56)
+    }
+    
+    func testDepartureForUnevenNumberOfArrivalEvents() {
+        let compsStartDate = DateComponents(calendar: Calendar.current, timeZone: TimeZone.current, year: 2000, month: 1, day: 1, hour: 13, minute: 0, second: 0)
+        var arrival2 = DateComponents(calendar: Calendar.current, timeZone: TimeZone.current, year: 2000, month: 1, day: 1, hour: 13, minute: 0, second: 0)
+        arrival2.hour = 17
+        let startDate = Calendar.current.date(from: compsStartDate)
+        var endDate = compsStartDate
+        let arrival2Date = Calendar.current.date(from: arrival2)
+        endDate.hour = 16
+        FenceEventManager.instance.adapter = MockStorage()
+        let event1 = FenceEvent(type: .entered, date: startDate!)
+        let event2 = FenceEvent(type: .exit, date: endDate.date!)
+        let event3 = FenceEvent(type: .entered, date: arrival2Date!)
+        [event1, event2, event3].forEach({ FenceEventManager.instance.save(event: $0) })
+        XCTAssertNil(FenceEventManager.instance.departure(for: startDate!))
+    }
+    func testDepartureForEvenNumberOfArrivalEvents() {
+        let compsStartDate = DateComponents(calendar: Calendar.current, timeZone: TimeZone.current, year: 2000, month: 1, day: 1, hour: 13, minute: 0, second: 0)
+        var arrival2 = DateComponents(calendar: Calendar.current, timeZone: TimeZone.current, year: 2000, month: 1, day: 1, hour: 13, minute: 0, second: 0)
+        arrival2.hour = 17
+        let startDate = Calendar.current.date(from: compsStartDate)
+        var endDate = compsStartDate
+        var depDate = arrival2
+        depDate.hour = 18
+        let depDate2 = Calendar.current.date(from: depDate)
+        let arrival2Date = Calendar.current.date(from: arrival2)
+        endDate.hour = 16
+        FenceEventManager.instance.adapter = MockStorage()
+        let event1 = FenceEvent(type: .entered, date: startDate!)
+        let event2 = FenceEvent(type: .exit, date: endDate.date!)
+        let event3 = FenceEvent(type: .entered, date: arrival2Date!)
+        let event4 = FenceEvent(type: .exit, date: depDate2!)
+        [event1, event2, event3, event4].forEach({ FenceEventManager.instance.save(event: $0) })
+        XCTAssertNotNil(FenceEventManager.instance.departure(for: startDate!))
     }
 }
 

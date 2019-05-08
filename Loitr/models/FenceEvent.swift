@@ -142,7 +142,17 @@ final class FenceEventManager {
     }
     
     func departure(for date: Date) -> Date? {
-        return allEvents().filter({ $0.date >= date.dateBySet(hour: 0, min: 0, secs: 0)! && $0.date <= date.dateBySet(hour: 23, min: 59, secs: 59)! }).sorted(by: { $0.date > $1.date }).first(where: { $0.type == FenceEvent.EventType.exit.rawValue })?.date
+        let events = allEvents().filter({ $0.date >= date.dateBySet(hour: 0, min: 0, secs: 0)! && $0.date <= date.dateBySet(hour: 23, min: 59, secs: 59)! })
+        // if we have an even number of both arrival and departure dates, then we need to return the last date otherwise return nil
+        let arrivalEvents = events.filter({ $0.type == FenceEvent.EventType.entered.rawValue })
+        let departureEvents = events.filter({ $0.type == FenceEvent.EventType.exit.rawValue })
+        // if both events are 1 count
+        if arrivalEvents.count == 1 && departureEvents.count == 1 {
+            return events.sorted(by: { $0.date > $1.date }).first(where: { $0.type == FenceEvent.EventType.exit.rawValue })?.date
+        }
+        
+        guard arrivalEvents.count % 2 == 0 && departureEvents.count % 2 == 0 else { return nil }
+        return events.sorted(by: { $0.date > $1.date }).first(where: { $0.type == FenceEvent.EventType.exit.rawValue })?.date
     }
     
     func summary(for start:Date, end: Date?) -> (hours: Int, minutes: Int, seconds: Int)? {
