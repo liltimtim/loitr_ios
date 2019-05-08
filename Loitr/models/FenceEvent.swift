@@ -151,7 +151,7 @@ final class FenceEventManager {
             return events.sorted(by: { $0.date > $1.date }).first(where: { $0.type == FenceEvent.EventType.exit.rawValue })?.date
         }
         
-        guard arrivalEvents.count % 2 == 0 && departureEvents.count % 2 == 0 else { return nil }
+        guard departureEvents.count % 2 == 0 else { return nil }
         return events.sorted(by: { $0.date > $1.date }).first(where: { $0.type == FenceEvent.EventType.exit.rawValue })?.date
     }
     

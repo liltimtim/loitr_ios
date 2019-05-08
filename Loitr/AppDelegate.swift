@@ -16,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        let _ = NoteManager.instance
         if (launchOptions?.contains(where: { return $0.key == .location }) ?? false) {
 //            let location = launchOptions[UIApplication.LaunchOptionsKey.location]
 //            LocationProvider.didLaunch(with: l)
@@ -28,5 +29,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        NoteManager.instance.didRegisterRemoteNotifications(dataToken: deviceToken)
+    }
+    
 }
 

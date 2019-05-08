@@ -29,6 +29,7 @@ final class LoitrSummaryViewController : UIViewController {
         FenceEventManager.instance.onSaveEvent = saveEvent
         locationProvider = LocationProvider.instance
         locationProvider.delegate = self
+        NoteManager.instance.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -40,6 +41,7 @@ final class LoitrSummaryViewController : UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         LocationProvider.instance.requestPermission()
+//        NoteManager.instance.requestPermission()
         timer?.invalidate()
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateUI), userInfo: nil, repeats: true)
     }
@@ -107,9 +109,13 @@ final class LoitrSummaryViewController : UIViewController {
     }
 }
 
-extension LoitrSummaryViewController : LocationManagerDelegate {
+extension LoitrSummaryViewController : LocationManagerDelegate, NoteManagerDelegate {
+    func noteManagerAuthorizationStatus(status authorized: Bool) {
+        print(authorized)
+    }
+    
     func locationPermissionDenied() {
-        
+        NoteManager.instance.requestPermission()
     }
     
     func didAddGeofenceLocation() {
@@ -118,5 +124,8 @@ extension LoitrSummaryViewController : LocationManagerDelegate {
     
     func locationPermissionAllowed() {
         updateUI()
+        NoteManager.instance.requestPermission()
     }
 }
+
+

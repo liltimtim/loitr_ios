@@ -51,6 +51,10 @@ extension LocationProvider: LocationManagerInterface {
             startGeofencing(for: CLCircularRegion(center: CLLocationCoordinate2D(latitude: 33.4768, longitude: -81.9686), radius: 40.0, identifier: "Work"))
         case .notDetermined:
             clManager.requestAlwaysAuthorization()
+        case .authorizedWhenInUse:
+            clManager.requestAlwaysAuthorization()
+        case .denied:
+            clManager.requestWhenInUseAuthorization()
         default:
             break
         }
@@ -61,6 +65,8 @@ extension LocationProvider: LocationManagerInterface {
         switch status {
         case .authorizedAlways:
             print("Is authorized can begin monitoring")
+            requestPermission()
+        case .authorizedWhenInUse:
             requestPermission()
         case .denied:
             delegate?.locationPermissionDenied()
@@ -96,10 +102,12 @@ extension LocationProvider: LocationManagerInterface {
     func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
         print("Entered: \(region.identifier)")
         FenceEventManager.instance.save(event: FenceEvent(type: .entered, date: Date()))
+        NoteManager.instance.scheduleNote(title: "Loitering", message: "\(Date().toFormat(Date.hourFormat)) you entered.")
     }
     
     func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
         print("Exited: \(region.identifier)")
         FenceEventManager.instance.save(event: FenceEvent(type: .exit, date: Date()))
+        NoteManager.instance.scheduleNote(title: "Loitering", message: "\(Date().toFormat(Date.hourFormat)) you exited.")
     }
 }

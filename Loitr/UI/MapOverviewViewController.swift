@@ -24,7 +24,7 @@ final class MapOverviewViewController : UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        locationProvider.requestPermission()
+//        locationProvider.requestPermission()
         mapview.setUserTrackingMode(.followWithHeading, animated: true)
         setupFenceOverlays()
     }
