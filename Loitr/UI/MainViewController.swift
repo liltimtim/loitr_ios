@@ -23,6 +23,10 @@ final class MainViewController: UIViewController {
         setupUI()
     }
     
+    @objc private func dismissVC() {
+        dismiss(animated: true, completion: nil)
+    }
+    
     private func setupUI() {
         mapVC = MapOverviewViewController()
         addChild(mapVC)
@@ -60,5 +64,12 @@ final class MainViewController: UIViewController {
         eventsVC.view.rightAnchor.constraint(equalTo: tableContainer.rightAnchor).isActive = true
         eventsVC.view.bottomAnchor.constraint(equalTo: tableContainer.bottomAnchor).isActive = true
         
+        let closeBtn = UIButton()
+        closeBtn.setTitle("Close", for: .normal)
+        closeBtn.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(closeBtn)
+        closeBtn.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 28).isActive = true
+        closeBtn.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -28).isActive = true
+        closeBtn.addTarget(self, action: #selector(dismissVC), for: .touchUpInside)
     }
 }

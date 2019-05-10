@@ -23,6 +23,10 @@ class BouncyView: UIView {
     
     private var closeButton: UIButton!
     
+    private lazy var openViewController: MapOverviewViewController = {
+        return MapOverviewViewController()
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()

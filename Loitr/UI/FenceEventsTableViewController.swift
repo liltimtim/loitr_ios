@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import SwiftDate
 final class FenceEventsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
@@ -36,7 +36,7 @@ extension FenceEventsTableViewController {
         let cell = UITableViewCell(style: .subtitle, reuseIdentifier: nil)
         let event = FenceEventManager.instance.allEvents()[indexPath.row]
         cell.textLabel?.text = event.type
-        cell.detailTextLabel?.text = "\(event.date)"
+        cell.detailTextLabel?.text = "\(event.date.toRegion(withFormat: "M/d/yyyy h:mm a"))"
         return cell
     }
 }

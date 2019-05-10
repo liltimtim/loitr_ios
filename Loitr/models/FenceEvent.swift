@@ -146,10 +146,20 @@ final class FenceEventManager {
         // if we have an even number of both arrival and departure dates, then we need to return the last date otherwise return nil
         let arrivalEvents = events.filter({ $0.type == FenceEvent.EventType.entered.rawValue })
         let departureEvents = events.filter({ $0.type == FenceEvent.EventType.exit.rawValue })
+        
         // if both events are 1 count
         if arrivalEvents.count == 1 && departureEvents.count == 1 {
+            // handle case where you enter and exit very quickly
+            var diff: DateComponents
+            if let departureEvent = departureEvents.first, let arrivalEvent = arrivalEvents.first {
+                diff = departureEvent.date - arrivalEvent.date
+                guard let hour = diff.hour, let minute = diff.minute, let second = diff.second else { return nil }
+                if hour == 0 && minute == 0 && second < 59 { return nil }
+            }
             return events.sorted(by: { $0.date > $1.date }).first(where: { $0.type == FenceEvent.EventType.exit.rawValue })?.date
         }
+        
+
         
         guard departureEvents.count % 2 == 0 else { return nil }
         return events.sorted(by: { $0.date > $1.date }).first(where: { $0.type == FenceEvent.EventType.exit.rawValue })?.date
@@ -162,7 +172,9 @@ final class FenceEventManager {
         } else {
             diff = end! - start
         }
+        
         guard let hour = diff.hour, let minute = diff.minute, let second = diff.second else { return nil }
+        if hour == 0 && minute == 0 && second < 59 { return nil }
         if (hour == 0 && minute == 0 && second == 0) { return nil }
         return (hour, minute, second)
     }

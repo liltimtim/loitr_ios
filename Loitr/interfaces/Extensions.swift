@@ -8,9 +8,14 @@
 
 import Foundation
 import UIKit
+import SwiftDate
 
 extension Date {
     static let hourFormat: String = "h:mm a"
+    
+    func toRegion(withFormat format: String) -> String {
+        return self.convertTo(region: Region.current).toFormat(format)
+    }
 }
 
 extension Int {

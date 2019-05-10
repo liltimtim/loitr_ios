@@ -16,8 +16,6 @@ final class LoitrSummaryViewController : UIViewController {
     
     private var todaySummaryLabel: UILabel!
     
-    private var bouncyView: BouncyView!
-    
     private var locationProvider: LocationManagerInterface!
     
     private var timer: Timer?
@@ -78,6 +76,10 @@ final class LoitrSummaryViewController : UIViewController {
         return "\(arrivalVerbiage) and \(departureVerbiage)  \(totalTimeVerbiage)"
     }
     
+    @objc private func presentOptionsVC() {
+        present(MainViewController(), animated: true, completion: nil)
+    }
+    
     private func setupUI() {
         let gradient = CAGradientLayer()
         gradient.frame = view.bounds
@@ -100,12 +102,14 @@ final class LoitrSummaryViewController : UIViewController {
         todaySummaryLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 28).isActive = true
         todaySummaryLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -28).isActive = true
         
-        bouncyView = BouncyView()
-        bouncyView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(bouncyView)
-        bouncyView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -28).isActive = true
-        bouncyView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 28).isActive = true
-        bouncyView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -28).isActive = true
+        let optionsBtn = UIButton()
+        optionsBtn.setTitle("Options", for: .normal)
+        optionsBtn.setTitleColor(.white, for: .normal)
+        optionsBtn.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(optionsBtn)
+        optionsBtn.centerYAnchor.constraint(equalTo: todayLabel.centerYAnchor).isActive = true
+        optionsBtn.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -28).isActive = true
+        optionsBtn.addTarget(self, action: #selector(presentOptionsVC), for: .touchUpInside)
     }
 }
 

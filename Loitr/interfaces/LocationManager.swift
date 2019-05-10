@@ -48,7 +48,7 @@ extension LocationProvider: LocationManagerInterface {
         switch (authStatus) {
         case .authorizedAlways:
             delegate?.locationPermissionAllowed()
-            startGeofencing(for: CLCircularRegion(center: CLLocationCoordinate2D(latitude: 33.4768, longitude: -81.9686), radius: 40.0, identifier: "Work"))
+            startGeofencing(for: CLCircularRegion(center: CLLocationCoordinate2D(latitude: 33.4768, longitude: -81.9686), radius: 120.0, identifier: "Work"))
         case .notDetermined:
             clManager.requestAlwaysAuthorization()
         case .authorizedWhenInUse:
