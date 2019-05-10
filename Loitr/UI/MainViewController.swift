@@ -71,5 +71,12 @@ final class MainViewController: UIViewController {
         closeBtn.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 28).isActive = true
         closeBtn.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -28).isActive = true
         closeBtn.addTarget(self, action: #selector(dismissVC), for: .touchUpInside)
+        closeBtn.contentEdgeInsets = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
+        closeBtn.backgroundColor = UIColor.white
+        closeBtn.heightAnchor.constraint(equalToConstant: 35).isActive = true
+        closeBtn.widthAnchor.constraint(equalToConstant: 80).isActive = true
+        closeBtn.setTitleColor(.lightGray, for: .normal)
+        closeBtn.layer.cornerRadius = 35 / 2.0
+        closeBtn.clipsToBounds = true
     }
 }

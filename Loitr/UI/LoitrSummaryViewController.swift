@@ -110,6 +110,13 @@ final class LoitrSummaryViewController : UIViewController {
         optionsBtn.centerYAnchor.constraint(equalTo: todayLabel.centerYAnchor).isActive = true
         optionsBtn.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -28).isActive = true
         optionsBtn.addTarget(self, action: #selector(presentOptionsVC), for: .touchUpInside)
+        optionsBtn.contentEdgeInsets = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
+        optionsBtn.backgroundColor = UIColor.white
+        optionsBtn.heightAnchor.constraint(equalToConstant: 35).isActive = true
+        optionsBtn.widthAnchor.constraint(equalToConstant: 80).isActive = true
+        optionsBtn.setTitleColor(.lightGray, for: .normal)
+        optionsBtn.layer.cornerRadius = 35 / 2.0
+        optionsBtn.clipsToBounds = true
     }
 }
 
