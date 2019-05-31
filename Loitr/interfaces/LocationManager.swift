@@ -102,12 +102,12 @@ extension LocationProvider: LocationManagerInterface {
     func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
         print("Entered: \(region.identifier)")
         FenceEventManager.instance.save(event: FenceEvent(type: .entered, date: Date()))
-        NoteManager.instance.scheduleNote(title: "Loitering", message: "\(Date().toFormat(Date.hourFormat)) you entered.")
+        NoteManager.instance.scheduleNote(title: "Loitering", message: "\(Date().toRegion(withFormat: Date.hourFormat)) you entered.")
     }
     
     func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
         print("Exited: \(region.identifier)")
         FenceEventManager.instance.save(event: FenceEvent(type: .exit, date: Date()))
-        NoteManager.instance.scheduleNote(title: "Loitering", message: "\(Date().toFormat(Date.hourFormat)) you exited.")
+        NoteManager.instance.scheduleNote(title: "Loitering", message: "\(Date().toRegion(withFormat: Date.hourFormat)) you exited.")
     }
 }

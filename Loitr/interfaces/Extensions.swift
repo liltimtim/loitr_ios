@@ -14,7 +14,7 @@ extension Date {
     static let hourFormat: String = "h:mm a"
     
     func toRegion(withFormat format: String) -> String {
-        return self.convertTo(region: Region.current).toFormat(format)
+        return self.convertTo(region: Region.init(calendar: Calendar.current, zone: TimeZone.current, locale: Locale.current)).toFormat(format)
     }
 }
 
